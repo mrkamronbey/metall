@@ -1,0 +1,9 @@
+.nav_call_btn > a{
+    color: #375E97;
+    background: #fff;
+}
+
+.nav_call_btn > a:hover{
+    color: #fff;
+    background: #FB6542;
+}

@@ -1,0 +1,17 @@
+.hero_section{
+    background: #fff;
+    padding: 130px 0 0 0;
+}
+
+.nav_call_btn > button:hover{
+    color: #fff;
+    background: #375E97;
+}
+
+.nav_call_btn_media{
+    color: #fff;
+    background: #FB6542;
+    border-radius: 15px;
+    padding: 10px;
+    width: fit-content;
+}
