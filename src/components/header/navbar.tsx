@@ -20,49 +20,11 @@ import styles from "./style.module.css";
 import Link from "next/link";
 import { unbounded } from "@/fonts/fonts";
 
-const products = [
-  {
-    name: "Analytics",
-    description: "Get a better understanding of your traffic",
-    href: "#",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "Engagement",
-    description: "Speak directly to your customers",
-    href: "#",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "Security",
-    description: "Your customers’ data will be safe and secure",
-    href: "#",
-    icon: FingerPrintIcon,
-  },
-  {
-    name: "Integrations",
-    description: "Connect with third-party tools",
-    href: "#",
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: "Automations",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-];
-const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
-];
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
 
 const Navbar = ({ categories }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+
 
   return (
     <div className={`${styles.header_bottom_wrapper} ${unbounded.className}`}>
@@ -112,13 +74,13 @@ const Navbar = ({ categories }: HeaderProps) => {
               </Link>
             </li>
             <li className={styles.nav_list_item}>
-              <Link href="/carpark">
+              <a href="#limited">
                 <button
                   className={`px-3 py-2 text-sm font-semibold ${styles.nav_btn}`}
                 >
                   Вывоз и демонтаж
                 </button>
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
@@ -178,12 +140,13 @@ const Navbar = ({ categories }: HeaderProps) => {
                 >
                   Цены
                 </Link>
-                <Link
-                  href="/carpark"
+                <a
+                  href="#limited"
+                  onClick={() => setMobileMenuOpen(false)}
                   className={`-mx-3 block rounded-lg px-3 py-2 text-left font-semibold leading-7 w-full ${styles.drop_btn}`}
                 >
                   Вывоз и демонтаж
-                </Link>
+                </a>
                 <hr />
                 <Link
                   href="tel:+7 (926) 956-92-32"

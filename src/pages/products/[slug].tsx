@@ -30,8 +30,8 @@ const ProductDetails = ({priceDetails, categories}: PriceDetailsProps) => {
 export default ProductDetails;
 
 export const getServerSideProps: GetServerSideProps<PriceDetailsProps> = async({query}) => {
-  const categories = await CategoryQuery.getAllCategory();
   const priceDetails = await PricesQuery.getPriceDetails(query.slug as string)
+  const categories = await CategoryQuery.getAllCategory();
   return {
     props: {
       priceDetails,
@@ -41,6 +41,6 @@ export const getServerSideProps: GetServerSideProps<PriceDetailsProps> = async({
 }
 
 interface PriceDetailsProps{
-  priceDetails: PriceDetails
+  priceDetails: PriceDetails,
   categories: CategoryType[]
 }

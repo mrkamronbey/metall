@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 const Limited = () => {
   return (
-    <div className="limited_section">
+    <div className="limited_section" id="limited">
       <div className="global_container">
         <div>
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -28,19 +28,16 @@ const Limited = () => {
               </svg>
               <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
                 <h2 className="text-2xl font-bold tracking-tight text-white sm:text-2xl">
-                  Бесплатный вывоз от 50 кг лома цветных металлов, от 300 кг
-                  лома чёрных металлов.
+                  Бесплатный вывоз 1 тонны лома черного металла по Московской
+                  области.
                 </h2>
-                {/* <p className="mt-6 text-lg leading-8 text-gray-300">
-                Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.
-              </p> */}
                 <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-                  <Link
-                    href="/carpark"
+                  <a
+                     href="tel:+7 (925) 345-92-32"
                     className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                   >
-                    Автопарк
-                  </Link>
+                     Заказать звонок
+                  </a>
                 </div>
               </div>
               <div className="relative mt-16 h-80 lg:mt-8">
@@ -58,5 +55,5 @@ const Limited = () => {
       </div>
     </div>
   );
-}
-export default Limited
+};
+export default Limited;

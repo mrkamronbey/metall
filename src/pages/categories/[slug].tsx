@@ -37,19 +37,19 @@ export default CategoryDetails;
 export const getServerSideProps: GetServerSideProps<
   CategoryDetailsProps
 > = async ({ query }) => {
-  const categories = await CategoryQuery.getAllCategory();
   const categoryDetails = await CategoryQuery.getDetailCategory(
     query.slug as string
   );
+  const categories = await CategoryQuery.getAllCategory();
   return {
     props: {
       categoryDetails,
-      categories,
+      categories
     },
   };
 };
 
 interface CategoryDetailsProps {
   categoryDetails: CategoryType[];
-  categories: CategoryType[];
+  categories: CategoryType[]
 }

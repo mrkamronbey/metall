@@ -6,15 +6,20 @@ import Limited from "@/components/limited/limited";
 import Layout from "@/layout/layout";
 import { CategoryQuery } from "@/services/category.query";
 import { CategoryType } from "@/interfaces/category.interface";
+import Seo from "@/layout/seo/seo";
 
 const Prices = ({categories}: PriceProps) => {
   return (
     <>
-      <Head>
-        <title>Цены</title>
-        <meta name="description" content="Metallom Moscow" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+     <Seo 
+       metaTitle={
+        "Прием металлолома в Москве дорого круглосуточно в Втор Металл ММ"
+      }
+      metaDescription={
+        "Прием металлолома прием металла круглосуточный в Москве и Московской области 24/7. Максимальные цены за 1 тонну для юр. лиц, физ. лиц. Бесплатная оценка стоимости лома по месту или в WhatsApp в Втор Металл ММ."
+      }
+      metaKeywords={"Прием металлолома"}
+     >
       <Layout categories={categories}>
         <div className="pt-20">
           <PriceAll categories={categories} />
@@ -23,6 +28,7 @@ const Prices = ({categories}: PriceProps) => {
         <Process />
         <Limited />
       </Layout>
+     </Seo>
     </>
   );
 };

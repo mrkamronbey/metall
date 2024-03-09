@@ -7,7 +7,7 @@ import Header from "@/components/header/header";
 const Layout = ({ children, categories }: LayoutProps): JSX.Element => {
   return (
     <>
-      <Header categories={categories} />
+      <Header categories={categories}/>
       <div style={{ minHeight: "100vh" }}>{children}</div>
       <Footer/>
     </>

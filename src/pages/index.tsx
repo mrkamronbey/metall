@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Layout from "@/layout/layout";
+import Seo from "@/layout/seo/seo";
 import { GetServerSideProps } from "next";
 
 // import { CompanyInfo, Hero, Limited, PriceList, Process, Second } from "@/components";
@@ -16,24 +17,29 @@ import { CategoryType } from "@/interfaces/category.interface";
 import { PricesQuery } from "@/services/price.query";
 import { PricesType } from "@/interfaces/price.interface";
 
-const Home = ({categories, prices, tenPrice}: HomeProps) => {
+const Home = ({ categories, prices, tenPrice }: HomeProps) => {
   return (
     <>
-      <Head>
-        <title>Металлом</title>
-        <meta name="description" content="Metallom Moscow" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Layout categories={categories}>
-        <Hero />
-        <Second  categories={categories}/>
-        <hr />
-        <Process />
-        <hr />
-        <PriceList prices={prices} tenPrice={tenPrice} />
-        <Limited />
-        <CompanyInfo />
-      </Layout>
+      <Seo
+        metaTitle={
+          "Прием металлолома в Москве дорого круглосуточно в Втор Металл ММ"
+        }
+        metaDescription={
+          "Прием металлолома прием металла круглосуточный в Москве и Московской области 24/7. Максимальные цены за 1 тонну для юр. лиц, физ. лиц. Бесплатная оценка стоимости лома по месту или в WhatsApp в Втор Металл ММ."
+        }
+        metaKeywords={"Прием металлолома"}
+      >
+        <Layout categories={categories}>
+          <Hero />
+          <Second categories={categories} />
+          <hr />
+          <Process />
+          <hr />
+          <PriceList prices={prices} tenPrice={tenPrice} />
+          <Limited />
+          <CompanyInfo />
+        </Layout>
+      </Seo>
     </>
   );
 };
@@ -42,19 +48,19 @@ export default Home;
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   const categories = await CategoryQuery.getAllCategory();
-  const prices = await PricesQuery.getAllPrices()
-  const tenPrice = await PricesQuery.getTenPrice()
-   return {
+  const prices = await PricesQuery.getAllPrices();
+  const tenPrice = await PricesQuery.getTenPrice();
+  return {
     props: {
       categories,
       prices,
-      tenPrice
-    }
-   }
-}
+      tenPrice,
+    },
+  };
+};
 
-interface HomeProps{
-  categories: CategoryType[]
-  prices: PricesType[]
-  tenPrice: PricesType[]
+interface HomeProps {
+  categories: CategoryType[];
+  prices: PricesType[];
+  tenPrice: PricesType[];
 }
