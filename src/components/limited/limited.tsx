@@ -28,8 +28,7 @@ const Limited = () => {
               </svg>
               <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
                 <h2 className="text-2xl font-bold tracking-tight text-white sm:text-2xl">
-                  Бесплатный вывоз 1 тонны лома черного металла по Московской
-                  области.
+                  Бесплатный вывоз 1 тонны лома черного металла по Москва и Московской области.
                 </h2>
                 <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                   <a
