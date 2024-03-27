@@ -19,13 +19,14 @@ import React from "react";
 import styles from "./style.module.css";
 import Link from "next/link";
 import { unbounded } from "@/fonts/fonts";
+import { useRouter } from "next/router";
 
 
 
 const Navbar = ({ categories }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
-
-
+  const {pathname} = useRouter();
+  console.log(pathname);
   return (
     <div className={`${styles.header_bottom_wrapper} ${unbounded.className}`}>
       <nav

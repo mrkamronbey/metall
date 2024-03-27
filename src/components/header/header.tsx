@@ -8,6 +8,7 @@ import { HeaderProps } from "./header.props";
 import Navbar from "./navbar";
 
 const Header = ({ categories }: HeaderProps) => {
+  
   return (
     <>
       <div
