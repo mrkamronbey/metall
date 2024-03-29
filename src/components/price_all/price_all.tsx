@@ -17,10 +17,9 @@ const PriceAll = ({ categories }: PriceAllProps) => {
               </h2>
               <div className="xl:flex lg:flex md:flex sm:hidden max-sm:hidden items-center justify-between tabs_wrapper p-2 rounded-xl">
                 {categories.map((elem) => (
-                  <>
                     <div className="xl:w-1/3 px-2 md:w-full" key={elem.id}>
                       <button
-                        key={elem.id}
+                        id={elem.id}
                         onClick={() => setActive(elem.id)}
                         className={`px-5 text-white py-2 rounded-xl w-full tabs_btn lg:text-sm md:text-sm ${
                           active === elem.id ? "active" : ""
@@ -29,12 +28,10 @@ const PriceAll = ({ categories }: PriceAllProps) => {
                         {elem.name}
                       </button>
                     </div>
-                  </>
                 ))}
               </div>
               <div className="xl:hidden lg:hidden tabs_wrapper p-2 rounded-xl jusctify-center flex-col items-center md:hidden sm:flex max-sm:flex">
                 {categories.map((elem) => (
-                  <>
                     <div className="w-full px-2 my-1" key={elem.id}>
                       <button
                         key={elem.id}
@@ -46,20 +43,18 @@ const PriceAll = ({ categories }: PriceAllProps) => {
                         {elem.name}
                       </button>
                     </div>
-                  </>
                 ))}
               </div>
               <div className="mt-8">
                 {categories.map((elem) =>
                   elem.id === active
                     ? elem.subCategories?.map((item: any) => (
-                        <>
-                          <h4 key={item.id} className="text-xl font-bold _text_color max-sm:mt-20 mt-10">
+                        <div key={item.id}>
+                          <h4  className="text-xl font-bold _text_color max-sm:mt-20 mt-10">
                             {item?.name}
                           </h4>
                           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 max-sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                             {item?.prices?.map((e: any) => (
-                              <>
                                 <div key={e.id} className="group relative my-5">
                                   <div className="aspect-h-1 aspect-w-1  overflow-hidden rounded-xl bg-gray-200 lg:aspect-none group-hover:opacity-75 border-2 border-black">
                                     <Image
@@ -67,6 +62,7 @@ const PriceAll = ({ categories }: PriceAllProps) => {
                                       alt={e.name}
                                       width={1000}
                                       height={209}
+                                      priority
                                       className="h-auto w-full object-cover object-center lg:h-auto lg:w-full "
                                     />
                                   </div>
@@ -117,10 +113,9 @@ const PriceAll = ({ categories }: PriceAllProps) => {
                                     </div>
                                   </div>
                                 </div>
-                              </>
                             ))}
                           </div>
-                        </>
+                        </div>
                       ))
                     : null
                 )}

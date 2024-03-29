@@ -12,7 +12,6 @@ const CategoryContent = ({ categoryDetails }: CategoryContentProps) => {
         <div className="global_container">
           <div>
             {categoryDetails?.map((elem) => (
-              <>
                 <div key={elem.id}>
                   <h2 className="text-2xl sm:text-3xl _text_color mb-10 font-bold mt-10">
                     Цены на 
@@ -20,16 +19,14 @@ const CategoryContent = ({ categoryDetails }: CategoryContentProps) => {
                   </h2>
                   <div className="mt-8">
                     {elem?.subCategories.map((item: any) => (
-                      <>
+                      <div key={item.id}>
                         <h4 className="text-xl font-bold _text_color max-sm:mt-20 mt-20 underline">
                           {item?.name}
                         </h4>
                         <div
-                          key={item.id}
                           className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 max-sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
                         >
                           {item?.prices?.map((e: any) => (
-                            <>
                               <div key={e.id} className="group relative">
                                 <div className="aspect-h-1 aspect-w-1  overflow-hidden rounded-xl bg-gray-200 lg:aspect-none group-hover:opacity-75 border-2 border-black">
                                   <Image
@@ -37,6 +34,7 @@ const CategoryContent = ({ categoryDetails }: CategoryContentProps) => {
                                     alt={e.name}
                                     width={1000}
                                     height={209}
+                                    priority
                                     className="h-auto w-full object-cover object-center lg:h-auto lg:w-full "
                                   />
                                 </div>
@@ -84,19 +82,16 @@ const CategoryContent = ({ categoryDetails }: CategoryContentProps) => {
                                   </div>
                                 </div>
                               </div>
-                            </>
                           ))}
                         </div>
-                      </>
+                      </div>
                     ))}
                   </div>
                 </div>
-              </>
             ))}
             {categoryDetails.map((elem) =>
               elem.slug === "chernyix-lom" ? (
-                <>
-                  <div className="mt-20">
+                  <div key={elem.id} className="mt-20">
                     <hr />
                     <h2 className="text-2xl sm:text-3xl _text_color mb-10 font-bold mt-10">
                       От чего зависит цена на лом черных металлов
@@ -184,10 +179,8 @@ const CategoryContent = ({ categoryDetails }: CategoryContentProps) => {
                       </p>
                     </div>
                   </div>
-                </>
               ) : elem?.slug === "czvetnyix-lom" ? (
-                <>
-                  <div className="mt-20">
+                  <div key={elem.id} className="mt-20">
                     <hr />
                     <h2 className="text-2xl sm:text-3xl _text_color mb-10 font-bold mt-10">
                       От чего зависит цена на лом цветных металлов
@@ -270,7 +263,6 @@ const CategoryContent = ({ categoryDetails }: CategoryContentProps) => {
                       </p>
                     </div>
                   </div>
-                </>
               ) : (
                 <>
                   <div className="mt-20">

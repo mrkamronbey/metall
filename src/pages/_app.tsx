@@ -25,3 +25,4 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
   return <div className={unbounded.className}><Component {...pageProps} /></div>;
 }
+

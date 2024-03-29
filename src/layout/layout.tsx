@@ -9,7 +9,7 @@ const Layout = ({ children, categories }: LayoutProps): JSX.Element => {
     <>
       <Header categories={categories}/>
       <div style={{ minHeight: "100vh" }}>{children}</div>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   );
 };

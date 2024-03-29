@@ -12,7 +12,7 @@ const Product = ({ priceDetails }: DetailsProps) => {
         <div className="flex items-stretch xl:flex-row lg:flex-row md:flex-row my-10 sm:flex-col max-sm:flex-col">
           <div className="w-2/5 sm:w-full max-sm:w-full max-sm:mb-10 sm:mb-10 mr-10">
             <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-xl bg-gray-200 lg:aspect-none group-hover:opacity-75">
-              <Image
+              <img
                 src={priceDetails.image.url}
                 alt={priceDetails.name}
                 width={615}

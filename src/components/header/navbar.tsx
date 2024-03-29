@@ -26,7 +26,7 @@ import { useRouter } from "next/router";
 const Navbar = ({ categories }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const {pathname} = useRouter();
-  console.log(pathname);
+  
   return (
     <div className={`${styles.header_bottom_wrapper} ${unbounded.className}`}>
       <nav

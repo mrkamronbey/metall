@@ -46,6 +46,7 @@ const Limited = () => {
                   alt="App screenshot"
                   width={1824}
                   height={1080}
+                  priority
                 />
               </div>
             </div>
