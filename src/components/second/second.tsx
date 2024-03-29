@@ -14,12 +14,12 @@ const Second = ({categories}: SecondProps) => {
                   {categories.map((elem) => (
                     <div key={elem.id} className="group">
                       <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-xl bg-gray-200 xl:aspect-h-8 xl:aspect-w-7 border-2 border-black">
-                        <img
+                        <Image
                           src={elem?.image.url}
                           alt={elem.name}
                           width={382}
                           height={218}
-                          className="h-full w-full object-cover object-center group-hover:opacity-75"
+                          className="object-cover object-center group-hover:opacity-75 second_section_img"
                         />
                       </div>
                       <h3 className="mt-4 text-md max-sm:text-sm _text_color">

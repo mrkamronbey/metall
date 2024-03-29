@@ -103,8 +103,15 @@ html {
   background-color: #fff;
   color: #375E97;
 }
-.process_img{
-  width: auto;
+.process_img,
+.second_section_img{
+  width: 100%;
+  height: auto;
+}
+
+
+.second_section_img{
+  max-width: 100%;
   height: auto;
 }
 
