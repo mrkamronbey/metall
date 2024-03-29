@@ -38,6 +38,11 @@ const nextConfig = {
         protocol: "https",
         hostname: "zakupka-loma.ru",
         port: ""
+      },
+      {
+        protocol: "https",
+        hostname: "sun9-7.userapi.com",
+        port: ""
       }
       
     ],

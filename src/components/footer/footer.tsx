@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <div className="mb-10">
               <div className="mb-10">
-                <div>
+                {/* <div>
                   <iframe
                     src="https://yandex.ru/map-widget/v1/?ll=37.538851%2C55.525190&mode=whatshere&whatshere%5Bpoint%5D=37.538851%2C55.525085&whatshere%5Bzoom%5D=16.343836&z=16"
                     className="w-full rounded-3xl"
@@ -17,8 +17,7 @@ const Footer = () => {
                     frameBorder={1}
                     allowFullScreen={true}
                   ></iframe>
-                </div>
-               
+                </div> */}
               </div>
               <div className="flex justify-between items-center flex-wrap mb-5">
                 <div>
@@ -37,7 +36,7 @@ const Footer = () => {
                     +7 (925) 345-92-32
                   </a>
                 </div>
-                <div>
+                {/* <div>
                   <a
                     href="https://yandex.ru/navi/213/moscow/?ll=37.538851%2C55.525190&mode=whatshere&whatshere%5Bpoint%5D=37.538851%2C55.525085&whatshere%5Bzoom%5D=16.343836&z=16"
                     className={`text-white text-md flex items-center max-sm:mt-3`}
@@ -54,7 +53,7 @@ const Footer = () => {
                     <i className="bx bx-map mr-2"></i>
                     Рябиновая улица 53А.ст1. Втор Металл ММ
                   </a>
-                </div>
+                </div> */}
                 <div className={styles.nav_call_btn}>
                   <a
                     href="tel:+7 (926) 956-92-32"

@@ -15,11 +15,12 @@ const PriceAll = ({ categories }: PriceAllProps) => {
               <h2 className="text-center text-3xl sm:text-5xl _text_color mb-10">
                 Цены на металлолом
               </h2>
-              <div className="xl:flex lg:flex md:flex sm:hidden max-sm:hidden  items-center justify-between tabs_wrapper p-2 rounded-xl">
+              <div className="xl:flex lg:flex md:flex sm:hidden max-sm:hidden items-center justify-between tabs_wrapper p-2 rounded-xl">
                 {categories.map((elem) => (
                   <>
                     <div className="xl:w-1/3 px-2 md:w-full" key={elem.id}>
                       <button
+                        key={elem.id}
                         onClick={() => setActive(elem.id)}
                         className={`px-5 text-white py-2 rounded-xl w-full tabs_btn lg:text-sm md:text-sm ${
                           active === elem.id ? "active" : ""
@@ -36,6 +37,7 @@ const PriceAll = ({ categories }: PriceAllProps) => {
                   <>
                     <div className="w-full px-2 my-1" key={elem.id}>
                       <button
+                        key={elem.id}
                         onClick={() => setActive(elem.id)}
                         className={`px-5 text-white py-2 rounded-xl w-full tabs_btn lg:text-sm md:text-sm ${
                           active === elem.id ? "active" : ""
@@ -52,7 +54,7 @@ const PriceAll = ({ categories }: PriceAllProps) => {
                   elem.id === active
                     ? elem.subCategories?.map((item: any) => (
                         <>
-                          <h4 className="text-xl font-bold _text_color max-sm:mt-20 mt-10">
+                          <h4 key={item.id} className="text-xl font-bold _text_color max-sm:mt-20 mt-10">
                             {item?.name}
                           </h4>
                           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 max-sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
@@ -69,7 +71,7 @@ const PriceAll = ({ categories }: PriceAllProps) => {
                                     />
                                   </div>
                                   <div>
-                                    <div className="mt-4">
+                                    <div key={e.id} className="mt-4">
                                       <div className="w-full">
                                         <h3 className="text-md text-gray-700 max-sm:text-xs mb-3 w-max font-bold">
                                           <span

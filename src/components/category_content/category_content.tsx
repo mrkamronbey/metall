@@ -11,15 +11,15 @@ const CategoryContent = ({ categoryDetails }: CategoryContentProps) => {
       <div className="category_section pb-20 px-5">
         <div className="global_container">
           <div>
-            {categoryDetails.map((elem) => (
+            {categoryDetails?.map((elem) => (
               <>
-                <div>
+                <div key={elem.id}>
                   <h2 className="text-2xl sm:text-3xl _text_color mb-10 font-bold mt-10">
                     Цены на 
                      <span className="underline lowercase ml-2">{elem?.name}</span>
                   </h2>
                   <div className="mt-8">
-                    {elem?.subCategories?.map((item: any) => (
+                    {elem?.subCategories.map((item: any) => (
                       <>
                         <h4 className="text-xl font-bold _text_color max-sm:mt-20 mt-20 underline">
                           {item?.name}
@@ -45,8 +45,8 @@ const CategoryContent = ({ categoryDetails }: CategoryContentProps) => {
                                     <div className="w-full">
                                       <h3 className="text-md text-gray-700 max-sm:text-xs mb-3 w-max font-bold">
                                         <span aria-hidden="true" className="" />
-                                        {e.name.length >= 18
-                                          ? `${e.name.substring(0, 15)}...`
+                                        {e?.name?.length >= 18
+                                          ? `${e?.name?.substring(0, 15)}...`
                                           : e.name}
                                       </h3>
                                       {item.name === "Черного лома" ? (

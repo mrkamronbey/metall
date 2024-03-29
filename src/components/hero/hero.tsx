@@ -6,8 +6,10 @@ const Hero = () => {
     <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 mt-20">
       <Image
         src="https://sun9-7.userapi.com/impf/6yNxZoijxr_3KYzeJrZ0FMwWgOvFhZl5HOn3zQ/rcdzLl0gEl8.jpg?size=1818x606&quality=95&crop=169,0,1580,526&sign=f4ca92e6484b27dc67081e71040ee196&type=cover_group"
-        alt=""
+        alt="sun9-7.userapi.com"
         fill
+        unoptimized
+        priority
         className="absolute inset-0 -z-10 h-auto w-full"
       />
       <div

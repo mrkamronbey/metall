@@ -38,7 +38,7 @@ const stats = [
                     <p className=" text-3xl font-semibold tracking-tight _text_color sm:text-5xl">
                       {stat.value}
                     </p>
-                    <Image width={248} height={216} src={stat.img} alt="" className="mb-5 ml-5" />
+                    <img width={248}  height={216} src={stat.img} alt="" className="mb-5 ml-5" />
                   </div>
                   <p className="text-base leading-7 text-justify">{stat.name}</p>
                 </div>

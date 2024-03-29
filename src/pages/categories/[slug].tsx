@@ -16,11 +16,6 @@ const CategoryDetails = ({
       <Head>
         <title>Цены на металлолом</title>
         <meta name="description" content="Metallom Moscow" />
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-          rel="stylesheet"
-        ></link>
       </Head>
       <Layout categories={categories}>
         <CategoryContent categoryDetails={categoryDetails} />

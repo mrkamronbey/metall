@@ -14,7 +14,7 @@ const Second = ({categories}: SecondProps) => {
                   {categories.map((elem) => (
                     <div key={elem.id} className="group">
                       <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-xl bg-gray-200 xl:aspect-h-8 xl:aspect-w-7 border-2 border-black">
-                        <Image
+                        <img
                           src={elem?.image.url}
                           alt={elem.name}
                           width={382}
