@@ -1,0 +1,1 @@
+export const API_URL = "https://api-us-east-1-shared-usea1-02.hygraph.com/v2/cltbhw1892uv007utglof4vzf/master"

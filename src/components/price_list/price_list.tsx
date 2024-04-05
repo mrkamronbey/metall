@@ -26,17 +26,17 @@ const PriceList = ({prices, tenPrice}: PriceProps ) => {
               </tr>
             </thead>
             <tbody>
-              {tenPrice.map((elem, index) => (
+              {tenPrice?.map((elem, index) => (
                 <tr key={elem.id}>
                   <td className="border-2 border-slate-700 _text_color p-2 text-sm text-center">
                     {index + 1}
                   </td>
                   <td className="border-2 border-slate-700 _text_color p-2 text-sm max-sm:text-xs">
-                    {elem.name}
+                    {elem?.name}
                   </td>
                   <td className="border-2 border-slate-700 _text_color p-2 text-sm max-sm:text-xs">
                     {
-                      elem.subCategory.name === "Черного лома" ? elem.tonnaPrice : elem.kgPrice
+                      elem?.subCategory?.name === "Черного лома" ? elem?.tonnaPrice : elem?.kgPrice
                     }
                   </td>
                 </tr>

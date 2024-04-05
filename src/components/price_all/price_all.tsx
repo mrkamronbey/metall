@@ -48,18 +48,18 @@ const PriceAll = ({ categories }: PriceAllProps) => {
               <div className="mt-8">
                 {categories.map((elem) =>
                   elem.id === active
-                    ? elem.subCategories?.map((item: any) => (
-                        <div key={item.id}>
+                    ? elem?.subCategories?.map((item: any) => (
+                        <div key={item?.id}>
                           <h4  className="text-xl font-bold _text_color max-sm:mt-20 mt-10">
                             {item?.name}
                           </h4>
                           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 max-sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                             {item?.prices?.map((e: any) => (
-                                <div key={e.id} className="group relative my-5">
+                                <div key={e?.id} className="group relative my-5">
                                   <div className="aspect-h-1 aspect-w-1  overflow-hidden rounded-xl bg-gray-200 lg:aspect-none group-hover:opacity-75 border-2 border-black">
                                     <Image
-                                      src={e.image.url}
-                                      alt={e.name}
+                                      src={e?.image.url}
+                                      alt={e?.name}
                                       width={1000}
                                       height={209}
                                       priority
@@ -67,20 +67,20 @@ const PriceAll = ({ categories }: PriceAllProps) => {
                                     />
                                   </div>
                                   <div>
-                                    <div key={e.id} className="mt-4">
+                                    <div key={e?.id} className="mt-4">
                                       <div className="w-full">
                                         <h3 className="text-md text-gray-700 max-sm:text-xs mb-3 w-max font-bold">
                                           <span
                                             aria-hidden="true"
                                             className=""
                                           />
-                                          {e.name.length >= 18
-                                            ? `${e.name.substring(0, 15)}...`
-                                            : e.name}
+                                          {e?.name?.length >= 18
+                                            ? `${e?.name.substring(0, 15)}...`
+                                            : e?.name}
                                         </h3>
-                                        {item.name === "Черного лома" ? (
+                                        {item?.name === "Черного лома" ? (
                                           <p
-                                            key={e.id}
+                                            key={e?.id}
                                             className="text-sm flex justify-between items-center"
                                           >
                                             <span className="font-bold _text_color">
@@ -88,7 +88,7 @@ const PriceAll = ({ categories }: PriceAllProps) => {
                                             </span>
                                             <span className="_bg2_color text-white p-1 rounded-md">
                                               {" "}
-                                              {e.tonnaPrice}
+                                              {e?.tonnaPrice}
                                             </span>
                                           </p>
                                         ) : (
@@ -97,7 +97,7 @@ const PriceAll = ({ categories }: PriceAllProps) => {
                                               до/кг:
                                             </span>
                                             <span className="_bg2_color text-white p-1 rounded-md">
-                                              {e.kgPrice}
+                                              {e?.kgPrice}
                                             </span>
                                           </p>
                                         )}
@@ -105,7 +105,7 @@ const PriceAll = ({ categories }: PriceAllProps) => {
                                     </div>
                                     <div className="mt-5 w-full">
                                       <Link
-                                        href={`/products/${e.slug}`}
+                                        href={`/products/${e?.slug}`}
                                         className=" rounded-xl text-white w-auto px-3 py-2 text-sm _bg_color"
                                       >
                                         Подробнее...

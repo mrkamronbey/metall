@@ -13,8 +13,8 @@ const Product = ({ priceDetails }: DetailsProps) => {
           <div className="w-2/5 sm:w-full max-sm:w-full max-sm:mb-10 sm:mb-10 mr-10">
             <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-xl bg-gray-200 lg:aspect-none group-hover:opacity-75">
               <Image
-                src={priceDetails.image.url}
-                alt={priceDetails.name}
+                src={priceDetails?.image.url}
+                alt={priceDetails?.name}
                 width={615}
                 height={439}
                 className="h-auto w-full object-cover object-center lg:h-auto lg:w-full"
@@ -27,17 +27,17 @@ const Product = ({ priceDetails }: DetailsProps) => {
                     aria-hidden="true"
                     className=""
                   />
-                  {priceDetails.name}
+                  {priceDetails?.name}
                 </h3>
-                {priceDetails.subCategory.category.name === "Чёрный лом" ? (
+                {priceDetails?.subCategory?.category?.name === "Чёрный лом" ? (
                   <p
-                    key={priceDetails.id}
+                    key={priceDetails?.id}
                     className="text-md flex justify-between items-center"
                   >
                     <span className="font-bold _text_color">
                       до/т:
                     </span>
-                    <span className="_bg2_color text-white p-1 rounded-md"> {priceDetails.tonnaPrice}</span>
+                    <span className="_bg2_color text-white p-1 rounded-md"> {priceDetails?.tonnaPrice}</span>
                   </p>
                 ) : (
                   <p className="mt-1 text-md flex justify-between items-center">

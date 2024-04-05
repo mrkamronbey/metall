@@ -18,8 +18,8 @@ const CategoryContent = ({ categoryDetails }: CategoryContentProps) => {
                      <span className="underline lowercase ml-2">{elem?.name}</span>
                   </h2>
                   <div className="mt-8">
-                    {elem?.subCategories.map((item: any) => (
-                      <div key={item.id}>
+                    {elem?.subCategories?.map((item: any) => (
+                      <div key={item?.id}>
                         <h4 className="text-xl font-bold _text_color max-sm:mt-20 mt-20 underline">
                           {item?.name}
                         </h4>
@@ -47,9 +47,9 @@ const CategoryContent = ({ categoryDetails }: CategoryContentProps) => {
                                           ? `${e?.name?.substring(0, 15)}...`
                                           : e.name}
                                       </h3>
-                                      {item.name === "Черного лома" ? (
+                                      {item?.name === "Черного лома" ? (
                                         <p
-                                          key={e.id}
+                                          key={e?.id}
                                           className="text-sm flex justify-between items-center"
                                         >
                                           <span className="font-bold _text_color">
@@ -57,7 +57,7 @@ const CategoryContent = ({ categoryDetails }: CategoryContentProps) => {
                                           </span>
                                           <span className="_bg2_color text-white p-1 rounded-md">
                                             {" "}
-                                            {e.tonnaPrice}
+                                            {e?.tonnaPrice}
                                           </span>
                                         </p>
                                       ) : (
@@ -66,7 +66,7 @@ const CategoryContent = ({ categoryDetails }: CategoryContentProps) => {
                                             до/кг:
                                           </span>
                                           <span className="_bg2_color text-white p-1 rounded-md">
-                                            {e.kgPrice}
+                                            {e?.kgPrice}
                                           </span>
                                         </p>
                                       )}
@@ -74,7 +74,7 @@ const CategoryContent = ({ categoryDetails }: CategoryContentProps) => {
                                   </div>
                                   <div className="mt-5 w-full">
                                     <Link
-                                      href={`/products/${e.slug}`}
+                                      href={`/products/${e?.slug}`}
                                       className=" rounded-xl text-white w-auto px-3 py-2 text-sm _bg_color"
                                     >
                                       Подробнее...

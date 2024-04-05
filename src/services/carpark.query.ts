@@ -1,7 +1,8 @@
 import { CarParkType } from "@/interfaces/carpark.interface";
 import request, { gql } from "graphql-request"
+import { API_URL } from "@/utils/api";
 
-const graphqlAPI = process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT as string;
+// const graphqlAPI = process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT as string;
 
 export const CarParkQuery = {
   async getCars() {
@@ -18,7 +19,7 @@ export const CarParkQuery = {
         }
       }
     }`;
-    const result = request<{carParks : CarParkType[]}>(graphqlAPI, query)
+    const result = request<{carParks : CarParkType[]}>(API_URL, query)
     return (await result).carParks
   }
 }

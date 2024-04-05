@@ -53,13 +53,13 @@ const Navbar = ({ categories }: HeaderProps) => {
           <ul className="flex items-center">
             {categories?.map((elem) => {
               return (
-                <li key={elem.id} className={styles.nav_list_item}>
-                  <Link key={elem.id} href={`categories/${elem.slug}`}>
+                <li key={elem?.id} className={styles.nav_list_item}>
+                  <Link key={elem?.id} href={`categories/${elem?.slug}`}>
                     <button
-                      key={elem.id}
+                      key={elem?.id}
                       className={`px-3 py-2 text-sm font-semibold ${styles.nav_btn}`}
                     >
-                      {elem.name}
+                      {elem?.name}
                     </button>
                   </Link>
                 </li>

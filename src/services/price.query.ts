@@ -1,7 +1,8 @@
 import { PriceDetails, PricesType } from "@/interfaces/price.interface";
 import { request, gql } from "graphql-request";
+import { API_URL } from "@/utils/api";
 
-const graphqlAPI = process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT as string;
+// const graphqlAPI = process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT as string;
 
 export const PricesQuery = {
   async getAllPrices() {
@@ -20,7 +21,7 @@ export const PricesQuery = {
       }
     `;
 
-    const result = await request<{ prices: PricesType[] }>(graphqlAPI, query);
+    const result = await request<{ prices: PricesType[] }>(API_URL, query);
     return result.prices;
   },
   async getTenPrice() {
@@ -38,7 +39,7 @@ export const PricesQuery = {
         }
       }
     `;
-    const result = await request<{ prices: PricesType[] }>(graphqlAPI, query);
+    const result = await request<{ prices: PricesType[] }>(API_URL, query);
     return result.prices;
   },
 
@@ -68,7 +69,7 @@ export const PricesQuery = {
     const variables = { slug }; // Define the variable here
   
     const result = await request<{ pricess: PriceDetails }>(
-      graphqlAPI,
+      API_URL,
       query,
       variables // Pass the variables when making the request
     );

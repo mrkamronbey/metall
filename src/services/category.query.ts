@@ -1,7 +1,8 @@
 import { CategoryType } from "@/interfaces/category.interface";
 import { request, gql } from "graphql-request";
+import { API_URL } from "@/utils/api";
 
-const graphqlAPI = process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT as string;
+// const graphqlAPI = process.env.NEXT_PUBLIC_HYGRAPH_ENDPOINT as string;
 
 export const CategoryQuery = {
   async getAllCategory() {
@@ -33,7 +34,7 @@ export const CategoryQuery = {
     `;
 
     const result = await request<{ categories: CategoryType[] }>(
-      graphqlAPI,
+      API_URL,
       query
     );
     return result.categories;
@@ -67,7 +68,7 @@ export const CategoryQuery = {
       }
     `;
     const variables = { slug };
-    const result = await request<{ categories: CategoryType[]; }>(graphqlAPI, query, variables);
+    const result = await request<{ categories: CategoryType[]; }>(API_URL, query, variables);
     return result.categories;
   },
 };
