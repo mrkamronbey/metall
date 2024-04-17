@@ -1,4 +1,5 @@
 export interface CategoryType {
+  map(arg0: (item: { slug: any; }) => string): unknown;
   id: string;
   name: string;
   slug: string;
