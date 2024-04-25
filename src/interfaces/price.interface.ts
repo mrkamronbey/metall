@@ -1,4 +1,5 @@
 export interface PricesType {
+  slug: any;
   name: string;
   id: string;
   kgPrice: string;
