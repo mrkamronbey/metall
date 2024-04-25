@@ -13,6 +13,7 @@ export const PricesQuery = {
           id
           kgPrice
           tonnaPrice
+          slug
           subCategory {
             id
             name
